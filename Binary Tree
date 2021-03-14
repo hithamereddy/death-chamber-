@@ -1,0 +1,17 @@
+# not a tree bc there's no root
+str=["(1,2)", "(2,4)", "(5,7)", "(7,2)", "(9,5)"]
+lstparent=[]
+lstchildren=[]
+
+x = tuple(str)
+
+for i in str:
+#    print(i)
+    tup=tuple(i)
+#    print(tup)
+    lstparent.append(tup[3])
+    lstchildren.append(tup[1])
+    #x = tuple(map(int, i.split(',')))
+    #print(x)
+print(lstparent)
+print(lstchildren)
