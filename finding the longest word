@@ -1,0 +1,25 @@
+import re
+#def get_key(value):
+strParam = "23554 12345678"
+
+txt = str.split(strParam)
+
+length_of_words={}
+list_of_lengths=[]
+i=0
+for item in txt:
+    word = "".join(re.split("[^a-zA-Z0-9]*", item))
+    length = len(word)
+    #case_list[key1] = [value]
+    length_of_words[word] = length
+    list_of_lengths.insert(i,length)
+    i+=1
+
+longest = 0
+for i in list_of_lengths:
+    if i > longest:
+        longest = i
+
+for key, value in length_of_words.items():
+    if value == longest:
+        print(key)
