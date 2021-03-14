@@ -1,0 +1,22 @@
+strParam = ["1, 3, 4, 7, 13", "1, 2, 4, 13, 15"]
+str1 = strParam[0]
+str2 = strParam[1]
+print(str1)
+print(str2)
+list1 = list(map(int, str1.split(",")))
+list2 = list(map(int, str2.split(",")))
+lst = []
+
+count = 0
+for i in list1:
+    for j in list2:
+        if i == j:
+            lst.insert(count, i)
+        count += 1
+if (count > 0):
+    strArr = ','.join(map(str, lst))
+else:
+    strArr = "False"
+
+    # code goes here
+print(strArr)
