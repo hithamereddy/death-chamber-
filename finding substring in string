@@ -1,0 +1,79 @@
+#sstring slice practice
+from collections import Counter
+strParam= ["caae", "cae"]
+string_to_iterate = strParam[0]
+substring= strParam[1]
+string_length=len(string_to_iterate)
+sub_length=len(substring)
+sub_letter_frequency = Counter(substring)
+print (sub_letter_frequency)
+flagg=0
+
+def StringCompare(word):
+    print(word)
+
+    flag=0
+    word_letter_frequency= Counter(word)
+
+    #print (word_letter_frequency)
+    diff = sub_letter_frequency - word_letter_frequency
+    #for item in sub_letter_frequency.items():
+    if sum(diff.values())==0:
+        flag = 1
+        #print("*")
+        return word
+    else:
+        flag=0
+        word = "null"
+        return word
+
+    '''if flag==1:
+
+        return word
+    else:
+        word="null"
+        return word'''
+
+for j in range(0,len(string_to_iterate)-sub_length+1):
+    for i in range(0,len(string_to_iterate)-sub_length+1):
+        aaa=string_to_iterate[i : i+sub_length]
+        print("aaa is ", aaa)
+        str=StringCompare(aaa)
+
+        if str!="null":
+            print("string found", str)
+            flagg=1
+            break
+        else:
+            flagg=0
+    if flagg==1:
+        break
+    else:
+        sub_length += 1
+        print("bbbb :",sub_length)
+
+
+#print("string found", str)
+print("-----")
+
+sub = "rth"
+str = "srihitha"
+
+first_letter = sub[0]
+last_letter = sub[-1]
+
+start = None
+end = None
+
+letters = [let for let in str]
+
+for i, letter in enumerate(letters):
+    if letter == first_letter:
+        start = i
+    if letter == last_letter:
+        end = i
+
+if start and end:
+    print(f"From %s to %s." % (start + 1, end + 1))
+
+print("-----")
