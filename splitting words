@@ -1,0 +1,8 @@
+strParam = "StopAndSmellTheRoses."
+newStrParam = " "
+for i in strParam:
+    if i.isupper():
+       newStrParam=newStrParam + (" "+i)
+    else:
+        newStrParam = newStrParam + i
+print(newStrParam)
