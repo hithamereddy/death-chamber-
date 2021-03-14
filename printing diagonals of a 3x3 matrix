@@ -1,0 +1,53 @@
+#using list comprehensions
+#since matrix = mxm you can iterate over the diagonal by iterating over the index range once (0,0), (1,1), (2,2)
+#for the second diagonal you can reverse the index range with enumerate (0,2), (1,1), (2,0)
+#both methods require iterations of the order n only (where n is the length of the diagonal)
+#FIRST METHOD
+a = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
+
+d1 = [a[i][i] for i in range(len(a))] #turns out you can use a for loop like this - the more you know...
+d2 = [a[i][j] for i,j in enumerate(reversed(range(len(a))))]
+
+print(d1)
+print(d2)
+
+#if you have to print both of these together, you can use a single iteration over the matrix (order n)
+print("----------")
+#SECOND METHOD
+d1 = []
+d2 = []
+
+for i, j in enumerate(reversed(range(len(a)))):
+    d1.append(a[i][i])
+    d2.append(a[i][j])
+
+print(d1)
+print(d2)
+
+print("----------")
+#THIRD METHOD
+lst = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+diag1 = []
+diag2 = []
+
+for col, row in enumerate(lst):
+    diag1.append(row[col])
+    diag2.append(row[-col - 1])
+
+print(diag1)
+print(diag2)
+#enumerate() function will create list of pairs from list:
+# [(0, [1, 2, 3]),
+#  (1, [4, 5, 6]),
+#  (2, [7, 8, 9])]
+#the first item of a pair is just the index of the element (assigned to variable col)
+#element with index 0 from the row [1, 2, 3], i.e. element 1,
+#element with index 1 from the row [4, 5, 6], i.e. element 5,
+#element with index 2 from the row [7, 8, 9], i.e. element 9.
+#for second diagonal you select elements counting from the end (-1)
+#element with index -1 from the row [1, 2, 3], i.e. element 3,
+#element with index -2 from the row [4, 5, 6], i.e. element 5,
+#element with index -3 from the row [7, 8, 9], i.e. element 7.
