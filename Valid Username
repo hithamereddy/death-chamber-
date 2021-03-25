@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+
+
 strParam = "hithamereddy"
 n = len(strParam)
 #if (n<4 or n>25):
