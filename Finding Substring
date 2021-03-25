@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 #sstring slice practice
 from collections import Counter
 strParam= ["caae", "cae"]
