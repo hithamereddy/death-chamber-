@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 #sum of all even numbers in a matrix
 
 a = [[2, 3, 5],
