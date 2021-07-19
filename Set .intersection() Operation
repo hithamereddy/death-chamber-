@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+
+input()
+A = set(input().split(" "))
+
+input()
+B = set(input().split(" "))
+
+print(len(A.intersection(B)))
